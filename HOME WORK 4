@@ -1,0 +1,344 @@
+//Abdulmajeed Hussain
+
+
+//         1.اكتب برنامج Java لاختبار ما إذا كان العنصر الأول والأخير من صفيف من الأعداد الصحيحة متماثلين. يجب أن يكون طول الصفيف أكبر من أو يساوي 2
+
+import java.lang.*;
+public class Exercise75 {
+    public static void main(String[] args)
+    {
+        int[] num_array = {50, -20, 0, 30, 40, 60, 10};
+
+        System.out.println (num_array.length >= 2 && num_array[0] ==  num_array[num_array.length-1]);
+    }
+}
+
+
+
+
+
+
+
+                     //2.اكتب برنامج Java للعثور على أكبر العناصر k في مصفوفة معينة. يمكن أن تكون العناصر الموجودة في الصفيف بأي ترتيب.
+
+
+
+
+import java.util.Scanner;
+
+public class findElement
+{
+    public static void main(String []args)
+    {
+        Scanner sc=new Scanner(System.in);
+        int n;     //Declare array size
+        System.out.println("Enter the size of the array");
+        n=sc.nextInt();
+
+        int arr[]=new int[n];   //Declare array
+        System.out.println("Enter the array");
+        for(int i=0;i<n;i++)
+        {
+            arr[i]=sc.nextInt();
+        }
+
+        for(int i=0;i<n;i++)
+        {
+            for(int j=i+1;j<n;j++)
+            {
+                if(arr[i]<arr[j])
+                {
+                    int temp=arr[i];
+                    arr[i]=arr[j];
+                    arr[j]=temp;
+                }
+            }
+        }
+
+        System.out.println("Largest element is "+arr[0]);
+
+    }
+}
+
+
+
+
+                                            //3.اكتب برنامج Java للعثور على الأرقام الأكبر من متوسط أرقام مصفوفة معينة.
+
+
+
+import java.util.*;
+public class Solution {
+    public static void main(String[] args)
+    {
+        Integer nums[] = new Integer[]{1, 4, 17, 7, 25, 3, 100};
+        int sum = 0;
+        System.out.println("Original Array: ");
+        System.out.println(Arrays.toString(nums));
+        for(int i = 0; i < nums.length; i++) {
+            sum = sum + nums[i];
+        }
+        double average = sum / nums.length;
+        System.out.println("The average of the said array is: " + average);
+        System.out.println("The numbers in the said array that are greater than the average are: ");
+        for(int i = 0; i < nums.length; i++) {
+            if(nums[i] > average) {
+                System.out.println(nums[i]);
+            }
+        }
+    }
+}
+
+
+                              //4.اكتب برنامج Java للحصول على قيمة أكبر بين العنصر الأول والأخير من مجموعة من الأعداد الصحيحة.
+
+
+import java.util.Arrays; 
+ public class Exercise80 {
+ public static void main(String[] args)
+ {
+    int[] array_nums = {20, 30, 40};
+	System.out.println("Original Array: "+Arrays.toString(array_nums)); 
+	int max_val = array_nums[0];
+	if(array_nums[2] >= max_val)
+		max_val = array_nums[2];
+	System.out.println("Larger value between first and last element: "+max_val); 	 
+ }
+}
+
+
+                                     //  5. اكتب برنامج Java لتبديل العناصر الأولى والأخيرة من الصفيف وإنشاء مصفوفة جديدة.
+
+
+
+import java.util.Arrays; 
+ public class Exercise81 {
+ public static void main(String[] args)
+ {
+    int[] array_nums = {20, 30, 40};
+	System.out.println("Original Array: "+Arrays.toString(array_nums)); 
+	int x = array_nums[0];
+	array_nums[0] = array_nums[array_nums.length-1];
+	array_nums[array_nums.length-1] = x;
+	System.out.println("New array after swaping the first and last elements: "+Arrays.toString(array_nums));  
+ }
+}
+
+
+
+
+
+
+
+                                                         
+                                                 //6.اكتب برنامج Java للعثور على أطول كلمة في قاموس معين.
+
+
+
+class Main {
+      public static void main(String[] args) {
+        String[] dictionary = {"هو", "انا", "احمر","", "قطعه"};
+        ArrayList<String> longestWords = new ArrayList<String>();
+        int maxLength = 0;
+        for (String word : dictionary) {
+            if (word.length() > maxLength) {
+               maxLength = word.length();
+                longestWords.clear();
+            }
+            if (word.length() == maxLength) {
+                longestWords.add(word);
+            }
+        }
+       System.out.println("Longest word(s): " + longestWords);
+
+
+
+
+
+
+
+
+
+
+
+                                                    //7.اكتب برنامج Java مدفوعا بالقائمة مع الخيار التالي:
+
+
+
+
+
+import java.util.*;
+
+public class arrayMenu
+{
+    public static void main(String[] args)
+    {
+        Scanner kb;
+        int option;
+        kb = new Scanner(System.in);
+        option = menu(kb);
+        int[] myArray = new int[99];
+
+        while (option != 6)
+        {
+            switch (option)
+            {
+                case 1:
+                    myArray = newNum(kb, myArray);
+                    break;
+                case 2:
+                    display(myArray);
+                    break;
+                case 3:
+
+                    break;
+                case 4:
+
+                    break;
+                case 5:
+
+                    break;
+            }
+            option = menu(kb);
+        }
+        if (option == 6)
+        {
+            System.out.println();
+            System.out.println("Thank you. Have a nice day.");
+        }
+    }
+    public static int menu(Scanner kb)
+    {
+        int myOption = 0;
+        while (myOption != 1 && myOption != 2 && myOption != 3 && myOption != 4 && myOption != 5 && myOption != 6)
+        {
+            System.out.println();
+            System.out.println("Please select from the following menu choices.");
+            System.out.println();
+            System.out.println("1. Add a number to the array \n2. Display the mean \n3. Display the median \n4. Print the array to the screen \n5. Print the array in reverse order \n6. Quit");
+            System.out.println();
+            System.out.print("Choice --> ");
+            myOption = kb.nextInt();
+            kb.nextLine();
+            if (!(myOption == 1 || myOption == 2 || myOption == 3 || myOption == 4 || myOption == 5 || myOption == 6))
+                System.out.println("I am sorry that is an invalid menu choice.\nPlease try again");
+        }
+        return myOption;
+    }
+    public static int intNum(Scanner kb)
+    {
+        int num = -1;
+        while (!(num >= 0))
+        {
+            System.out.print("Please enter a non-negative integer -->");
+            num = kb.nextInt();
+
+            if (num < 0)
+                System.out.print("I am sorry that is not a non-negative integer.  \n");
+        }
+        return num;
+    }
+    public static int[] newNum(Scanner kb, int[] array)
+    {
+        for (int i = 0; i < 1; i++)
+        {
+            System.out.print("Please enter a number:");
+            array[i] = kb.nextInt();
+        }
+        return array;
+    }
+    public static void display(int[] array)
+    {
+        for (int myValue : array)
+        {
+            System.out.print(myValue);
+        }
+    }
+
+}
+
+
+
+
+
+
+
+                                                   //8. اكتب برنامجا يعرض عدد تكرارات عنصر ما في المصفوفة
+
+
+
+    public class Main {
+       public static void main(String[] args) {
+}
+   public static void main(String[] args) {
+ String[] students new String(6);
+ String[] students = {"1", "1", "1", "3","3","5"};
+
+ students[0] = "1";
+ students[1] = 1";
+ students[2] = "1";
+ students[3] = "1";
+  for (int i = 0; i <= students.length - 5; i++) {
+    System.out.println(students[i]);
+
+
+ for (String student : students) {
+    System.out.println(student + " 1 " + student.length());
+  }
+
+
+}
+ }
+ }
+
+
+                                       //9. اكتب برنامجا يضع العناصر الفردية للمصفوفة قبل العناصر الزوجية
+
+                                                                //الصفيف الأصلي:
+                                                            //[2,3,40,1,5,9,4,10,7]
+
+
+
+public class Main {
+    public static void main(String[] args) {
+       int[] arr = {2, 3, 40, 1, 5, 9, 4, 10, 7};
+        int[] result = new int[arr.length];
+       int oddIndex = 0;
+        int evenIndex = arr.length - 1;
+        for (int i = 0; i < arr.length; i++) {
+           if (arr[i] % 2!= 0) {
+                result[oddIndex] = arr[i];
+                oddIndex++;
+            } else {
+               result[evenIndex] = arr[i];
+                evenIndex--;
+            }
+        }
+        System.out.println(Arrays.toString(result));
+    }
+}
+
+
+
+
+
+
+                           
+                                                   //10. اكتب برنامجا يختبر المساواة بين صفيفين
+
+
+
+
+import java.util.Arrays;
+
+public class CheckTwoArraysAreEqual {
+
+ public static void main(final String[] args) {
+
+        final int[] array1 = { 1, 2, 3, 4, 5 };
+        final int[] array2 = { 1, 2, 3, 4, 5 };
+
+        final boolean intCheck = Arrays.equals(array1, array2);
+        System.out.println("Two Integers are Equal :: " + intCheck);
+    }
+}
